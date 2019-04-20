@@ -4,10 +4,10 @@
 #
 Name     : perl-Compress-Bzip2
 Version  : 2.26
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.26.tar.gz
-Summary  : 'Interface to Bzip2 compression library'
+Summary  : Interface to Bzip2 compression library
 Group    : Development/Tools
 License  : Artistic-1.0-Perl GPL-2.0 bzip2-1.0.6
 Requires: perl-Compress-Bzip2-lib = %{version}-%{release}
@@ -24,6 +24,7 @@ Summary: dev components for the perl-Compress-Bzip2 package.
 Group: Development
 Requires: perl-Compress-Bzip2-lib = %{version}-%{release}
 Provides: perl-Compress-Bzip2-devel = %{version}-%{release}
+Requires: perl-Compress-Bzip2 = %{version}-%{release}
 
 %description dev
 dev components for the perl-Compress-Bzip2 package.
