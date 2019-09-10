@@ -4,10 +4,10 @@
 #
 Name     : perl-Compress-Bzip2
 Version  : 2.26
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.26.tar.gz
-Summary  : Interface to Bzip2 compression library
+Summary  : 'Interface to Bzip2 compression library'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl GPL-2.0 bzip2-1.0.6
 Requires: perl-Compress-Bzip2-lib = %{version}-%{release}
@@ -54,7 +54,7 @@ license components for the perl-Compress-Bzip2 package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -64,7 +64,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
