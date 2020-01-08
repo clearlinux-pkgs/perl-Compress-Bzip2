@@ -4,14 +4,14 @@
 #
 Name     : perl-Compress-Bzip2
 Version  : 2.26
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.26.tar.gz
 Summary  : 'Interface to Bzip2 compression library'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl GPL-2.0 bzip2-1.0.6
-Requires: perl-Compress-Bzip2-lib = %{version}-%{release}
 Requires: perl-Compress-Bzip2-license = %{version}-%{release}
+Requires: perl-Compress-Bzip2-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : bzip2-dev
 
@@ -22,21 +22,11 @@ from http://sources.redhat.com/bzip2, by Julian Seward, jseward@acm.org
 %package dev
 Summary: dev components for the perl-Compress-Bzip2 package.
 Group: Development
-Requires: perl-Compress-Bzip2-lib = %{version}-%{release}
 Provides: perl-Compress-Bzip2-devel = %{version}-%{release}
 Requires: perl-Compress-Bzip2 = %{version}-%{release}
 
 %description dev
 dev components for the perl-Compress-Bzip2 package.
-
-
-%package lib
-Summary: lib components for the perl-Compress-Bzip2 package.
-Group: Libraries
-Requires: perl-Compress-Bzip2-license = %{version}-%{release}
-
-%description lib
-lib components for the perl-Compress-Bzip2 package.
 
 
 %package license
@@ -47,8 +37,18 @@ Group: Default
 license components for the perl-Compress-Bzip2 package.
 
 
+%package perl
+Summary: perl components for the perl-Compress-Bzip2 package.
+Group: Default
+Requires: perl-Compress-Bzip2 = %{version}-%{release}
+
+%description perl
+perl components for the perl-Compress-Bzip2 package.
+
+
 %prep
 %setup -q -n Compress-Bzip2-2.26
+cd %{_builddir}/Compress-Bzip2-2.26
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -73,8 +73,8 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Compress-Bzip2
-cp COPYING %{buildroot}/usr/share/package-licenses/perl-Compress-Bzip2/COPYING
-cp bzlib-src/LICENSE %{buildroot}/usr/share/package-licenses/perl-Compress-Bzip2/bzlib-src_LICENSE
+cp %{_builddir}/Compress-Bzip2-2.26/COPYING %{buildroot}/usr/share/package-licenses/perl-Compress-Bzip2/ff8688f52f05aa77ac2522c7970e6ab23bf77d0e
+cp %{_builddir}/Compress-Bzip2-2.26/bzlib-src/LICENSE %{buildroot}/usr/share/package-licenses/perl-Compress-Bzip2/1c0c6888759a63c32bca7eb63353af2cd9bd5d9e
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -87,18 +87,18 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Compress/Bzip2.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Compress/Bzip2/autosplit.ix
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Compress::Bzip2.3
 
-%files lib
-%defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Compress/Bzip2/Bzip2.so
-
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Compress-Bzip2/COPYING
-/usr/share/package-licenses/perl-Compress-Bzip2/bzlib-src_LICENSE
+/usr/share/package-licenses/perl-Compress-Bzip2/1c0c6888759a63c32bca7eb63353af2cd9bd5d9e
+/usr/share/package-licenses/perl-Compress-Bzip2/ff8688f52f05aa77ac2522c7970e6ab23bf77d0e
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Compress/Bzip2.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Compress/Bzip2/Bzip2.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Compress/Bzip2/autosplit.ix
