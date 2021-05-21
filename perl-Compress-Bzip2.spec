@@ -4,7 +4,7 @@
 #
 Name     : perl-Compress-Bzip2
 Version  : 2.28
-Release  : 19
+Release  : 20
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.28.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.28.tar.gz
 Summary  : 'Interface to Bzip2 compression library'
