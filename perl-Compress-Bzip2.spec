@@ -99,6 +99,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Compress/Bzip2.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/Compress/Bzip2/Bzip2.so
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/Compress/Bzip2/autosplit.ix
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Compress/Bzip2.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Compress/Bzip2/Bzip2.so
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Compress/Bzip2/autosplit.ix
