@@ -4,7 +4,7 @@
 #
 Name     : perl-Compress-Bzip2
 Version  : 2.28
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.28.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Compress-Bzip2-2.28.tar.gz
 Summary  : 'Interface to Bzip2 compression library'
@@ -99,6 +99,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Compress/Bzip2.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Compress/Bzip2/Bzip2.so
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Compress/Bzip2/autosplit.ix
+/usr/lib/perl5/*
